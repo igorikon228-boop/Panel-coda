@@ -1,0 +1,541 @@
+{
+  "version": 1,
+  "image": "advent-sprites.png",
+  "atlas": {
+    "width": 1201,
+    "height": 707,
+    "columns": 8,
+    "rows": 4,
+    "count": 31
+  },
+  "usage": "Pixel crop rectangles. card/modal are suggested placement settings.",
+  "sprites": {
+    "1": {
+      "name": "capybara_cool",
+      "x": 0,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "2": {
+      "name": "cat_santa",
+      "x": 150,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "3": {
+      "name": "goose_cool",
+      "x": 300,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "4": {
+      "name": "frog_fist",
+      "x": 450,
+      "y": 0,
+      "width": 151,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "5": {
+      "name": "coffee_smile",
+      "x": 601,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "6": {
+      "name": "santa_strong",
+      "x": 751,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "7": {
+      "name": "cat_king",
+      "x": 901,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "8": {
+      "name": "tractor",
+      "x": 1051,
+      "y": 0,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "9": {
+      "name": "dog_cool",
+      "x": 0,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "10": {
+      "name": "cat_headphones",
+      "x": 150,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "11": {
+      "name": "frog_laptop",
+      "x": 300,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "12": {
+      "name": "disco_ball",
+      "x": 450,
+      "y": 177,
+      "width": 151,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "13": {
+      "name": "dumbbell",
+      "x": 601,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "14": {
+      "name": "fish_cool",
+      "x": 751,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "15": {
+      "name": "dog_cowboy",
+      "x": 901,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "16": {
+      "name": "frog_idea",
+      "x": 1051,
+      "y": 177,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "17": {
+      "name": "cat_plan",
+      "x": 0,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "18": {
+      "name": "dino_cool",
+      "x": 150,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "19": {
+      "name": "printer_hoba",
+      "x": 300,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "20": {
+      "name": "duck_cool",
+      "x": 450,
+      "y": 354,
+      "width": 151,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "21": {
+      "name": "moose_cool",
+      "x": 601,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "22": {
+      "name": "cat_scream",
+      "x": 751,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "23": {
+      "name": "cheers",
+      "x": 901,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "24": {
+      "name": "snowman",
+      "x": 1051,
+      "y": 354,
+      "width": 150,
+      "height": 176,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "25": {
+      "name": "shark_cool",
+      "x": 0,
+      "y": 530,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "26": {
+      "name": "tree_cool",
+      "x": 150,
+      "y": 530,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "27": {
+      "name": "muscle_cat",
+      "x": 300,
+      "y": 530,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "28": {
+      "name": "unicorn_cool",
+      "x": 450,
+      "y": 530,
+      "width": 151,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "29": {
+      "name": "cat_more_move",
+      "x": 601,
+      "y": 530,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "30": {
+      "name": "raccoon_money",
+      "x": 751,
+      "y": 530,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    },
+    "31": {
+      "name": "fireworks",
+      "x": 901,
+      "y": 530,
+      "width": 150,
+      "height": 177,
+      "card": {
+        "scale": 1,
+        "x": "50%",
+        "y": "52%"
+      },
+      "modal": {
+        "scale": 1.12,
+        "x": "50%",
+        "y": "50%"
+      }
+    }
+  }
+}
