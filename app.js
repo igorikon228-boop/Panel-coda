@@ -31,11 +31,43 @@ const days=[
 ["ВРЕМЕНИ НА ГЛАВНОЕ","Пусть хватит времени закончить важное и не начинать 30 декабря то, что спокойно может подождать января."],
 ["МЫ СДЕЛАЛИ ЭТО!","Финал! Спасибо каждому, кто весь год двигал общее дело. Пусть новый год принесёт сил, своих людей рядом, классных идей и побольше моментов: «Хоба — получилось!»"]
 ];
-const memes=["🦫","🤜","🦫","☕","🐈","🥂","🪿","😎","🚜","👍","🏋️","👑","☎️","🎄","😎","🐸","🚜","🐈","🪩","🕶️","🪿","🤠","⭐","🎅","🦫","🫶","💸","🐈","🐸","🥂","🎆"];
 const short=["НАЧИНАЕМ ДЕКАБРЬ","ВМЕСТЕ МОЖЕМ БОЛЬШЕ","СПОКОЙСТВИЕ. ПЛАН.","БОЛЬШЕ КОФЕ","МАЛЕНЬКИЕ ШАГИ","ЗА КОМАНДУ","ГЛАВНОЕ — ДВИЖ","ДЕРЖИ ФОКУС","ЭНЕРГИЯ ТРАКТОРА","ВАЖНОЕ ДЕЛО","СИЛ НА ЗАДАЧИ","КАК КОРОЛИ","КЛАССНЫХ ПРОЕКТОВ","ВСЁ СКЛАДЫВАЕТСЯ","БОЛЬШЕ УВЕРЕННОСТИ","БОЛЬШЕ КРЕАТИВА","К ЦЕЛЯМ","МЕМНАЯ ПОДДЕРЖКА","ЯРКИХ МОМЕНТОВ","СМЕЛЫХ РЕШЕНИЙ","НЕ ЗАБЫВАЙ ДЫШАТЬ","ВОЗМОЖНОСТЕЙ","ПЛАНЫ СБЫВАЮТСЯ","СИЛ И ЭНЕРГИИ","ТЕПЛА И УЮТА","КЛАССНЫЕ ЛЮДИ","ДОСТИЖЕНИЙ","СЮРПРИЗОВ","ВСЁ ПО ПЛАНУ","ВРЕМЕНИ НА ГЛАВНОЕ","С НОВЫМ ГОДОМ"];
-const cal=document.querySelector("#calendar"),dlg=document.querySelector("#wishDialog"),toggle=document.querySelector("#previewToggle");let preview=sessionStorage.getItem("advent31preview")==="1";
+let spriteData=null;
+const cal=document.querySelector("#calendar"),dlg=document.querySelector("#wishDialog"),toggle=document.querySelector("#previewToggle");
+let preview=sessionStorage.getItem("advent31preview")==="1";
 function unlocked(d){if(preview)return true;const n=new Date();if(n.getFullYear()<2026||(n.getFullYear()===2026&&n.getMonth()<11))return false;if(n.getFullYear()>2026||(n.getFullYear()===2026&&n.getMonth()>11))return true;return d<=n.getDate()}
 function opened(){try{return JSON.parse(localStorage.getItem("advent31opened")||"[]")}catch{return[]}}
-function build(){cal.innerHTML="";const op=opened();for(let d=1;d<=31;d++){const b=document.createElement("button");b.className="door";b.type="button";const ok=unlocked(d);if(!ok)b.classList.add("locked");if(op.includes(d))b.classList.add("opened");const n=new Date();if(!preview&&n.getFullYear()===2026&&n.getMonth()===11&&n.getDate()===d)b.classList.add("today");b.disabled=!ok;b.setAttribute("aria-label",ok?"Открыть "+d+" декабря":d+" декабря — пока закрыто");b.innerHTML='<span class="num">'+String(d).padStart(2,"0")+'</span><span class="sym">'+(ok?"✦":"⌁")+'</span><span class="meme" aria-hidden="true">'+memes[d-1]+'</span><span class="mini">'+short[d-1]+'</span>';b.onclick=()=>show(d,b);cal.appendChild(b)}}
-function show(d,b){let op=opened();if(!op.includes(d)){op.push(d);localStorage.setItem("advent31opened",JSON.stringify(op))}b.classList.add("opened");document.querySelector("#modalDay").textContent=String(d).padStart(2,"0");document.querySelector("#modalTitle").textContent=days[d-1][0];document.querySelector("#modalWish").textContent=days[d-1][1];document.querySelector("#modalMeme").textContent=memes[d-1];dlg.showModal()}
-function close(){dlg.close()}document.querySelector("#closeDialog").onclick=close;document.querySelector("#modalOk").onclick=close;dlg.onclick=e=>{if(e.target===dlg)close()};toggle.onclick=()=>{preview=!preview;sessionStorage.setItem("advent31preview",preview?"1":"0");toggle.classList.toggle("active",preview);build()};toggle.classList.toggle("active",preview);build();
+function spriteStyle(d,mode="card"){
+ const s=spriteData?.sprites?.[String(d)]; if(!s)return "";
+ const atlas=spriteData.atlas, p=s[mode]||{}, scale=Number(p.scale)||1;
+ const w=s.width*scale,h=s.height*scale;
+ return "--sx:"+s.x+";--sy:"+s.y+";--sw:"+s.width+";--sh:"+s.height+";--aw:"+atlas.width+";--ah:"+atlas.height+";--scale:"+scale+";--px:"+(p.x||"50%")+";--py:"+(p.y||"50%")+";";
+}
+function build(){
+ cal.innerHTML="";const op=opened();
+ for(let d=1;d<=31;d++){
+  const b=document.createElement("button");b.className="door";b.type="button";const ok=unlocked(d);
+  if(!ok)b.classList.add("locked");if(op.includes(d))b.classList.add("opened");
+  const n=new Date();if(!preview&&n.getFullYear()===2026&&n.getMonth()===11&&n.getDate()===d)b.classList.add("today");
+  b.disabled=!ok;b.setAttribute("aria-label",ok?"Открыть "+d+" декабря":d+" декабря — пока закрыто");
+  b.innerHTML='<span class="num">'+String(d).padStart(2,"0")+'</span><span class="sym">'+(ok?"✦":"⌁")+'</span><span class="sprite" aria-hidden="true" style="'+spriteStyle(d,"card")+'"></span><span class="mini">'+short[d-1]+'</span>';
+  b.onclick=()=>show(d,b);cal.appendChild(b);
+ }
+}
+function show(d,b){
+ let op=opened();if(!op.includes(d)){op.push(d);localStorage.setItem("advent31opened",JSON.stringify(op))}
+ b.classList.add("opened");document.querySelector("#modalDay").textContent=String(d).padStart(2,"0");
+ document.querySelector("#modalTitle").textContent=days[d-1][0];document.querySelector("#modalWish").textContent=days[d-1][1];
+ const m=document.querySelector("#modalMeme");m.className="modal-meme sprite";m.setAttribute("style",spriteStyle(d,"modal"));
+ dlg.showModal();
+}
+function close(){if(dlg.open)dlg.close()}
+document.querySelector("#closeDialog").onclick=close;document.querySelector("#modalOk").onclick=close;
+dlg.onclick=e=>{if(e.target===dlg)close()};
+toggle.onclick=()=>{preview=!preview;sessionStorage.setItem("advent31preview",preview?"1":"0");toggle.classList.toggle("active",preview);build()};
+async function init(){
+ try{const r=await fetch("advent-sprites.json?v=6",{cache:"no-store"});if(!r.ok)throw new Error("sprite json");spriteData=await r.json()}
+ catch(e){console.warn("Sprite atlas metadata unavailable",e)}
+ toggle.classList.toggle("active",preview);build();
+}
+init();
