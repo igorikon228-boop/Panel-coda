@@ -8,9 +8,20 @@ dialog{border:0;background:transparent;padding:0;max-width:none}dialog::backdrop
 @media(max-width:800px){main{padding:22px 10px}.hero{padding:30px 22px}.calendar{grid-template-columns:repeat(4,1fr)}.hero-bottom{margin-top:30px}.manifest{padding:40px 15px}.door{aspect-ratio:.9}}
 @media(max-width:450px){main{padding:0}.hero{padding:32px 15px 26px}.hero-bottom{font-size:9px}.calendar{grid-template-columns:repeat(3,1fr);gap:5px;padding:5px}.door{padding:7px;aspect-ratio:.86}.mini{left:7px;bottom:7px;font-size:8px}.sym{right:6px;top:5px}.manifest{padding:38px 14px}.card{padding:28px 22px}.bigday{font-size:74px}footer{padding:20px 8px}footer span{display:none}footer{justify-content:center}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-/* MEME CHARACTER LAYER v4 */
-.door .meme{position:absolute;right:-4px;bottom:23px;font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif;font-size:clamp(38px,5.2vw,68px);line-height:1;filter:grayscale(1) contrast(1.25);opacity:.58;transform:rotate(7deg);transition:.2s;z-index:0}
-.door .num,.door .mini,.door .sym{z-index:2}.door .num,.door .mini,.door .sym{position:absolute}.door:hover:not(:disabled) .meme,.door.opened .meme{filter:grayscale(.65) contrast(1.25);opacity:.9;transform:rotate(2deg) scale(1.08)}
-.door:nth-child(3n) .meme{right:auto;left:38%;transform:rotate(-8deg)}.door:nth-child(5n) .meme{font-size:clamp(42px,6vw,76px)}
-.card .modal-meme{font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif;font-size:92px;line-height:1;filter:grayscale(1) contrast(1.25);position:absolute;right:30px;top:115px;opacity:.78;transform:rotate(7deg)}
-@media(max-width:450px){.door .meme{font-size:42px;bottom:21px}.card .modal-meme{font-size:68px;right:18px;top:100px}.door .num{left:7px;top:6px}.door .sym{position:absolute}}
+
+/* SPRITE ATLAS v6 */
+.sprite{position:absolute;display:block;background-image:url("advent-sprites.png?v=6");background-repeat:no-repeat;
+ width:calc(var(--sw)*1px);height:calc(var(--sh)*1px);
+ background-size:calc(var(--aw)*1px) calc(var(--ah)*1px);
+ background-position:calc(var(--sx)*-1px) calc(var(--sy)*-1px);
+ transform-origin:center;pointer-events:none}
+.door .sprite{left:var(--px);top:var(--py);z-index:0;opacity:.78;filter:grayscale(1) contrast(1.12);
+ transform:translate(-50%,-50%) scale(var(--scale));transition:transform .2s,filter .2s,opacity .2s}
+.door:hover:not(:disabled) .sprite,.door.opened .sprite{opacity:.96;filter:grayscale(.55) contrast(1.15);transform:translate(-50%,-50%) scale(calc(var(--scale)*1.07))}
+.door .num,.door .mini,.door .sym{z-index:3;position:absolute;text-shadow:0 1px 5px #000,0 0 10px #000}
+.door .mini{background:linear-gradient(90deg,#050505dd,#05050522);padding:3px 3px 2px 0}
+.card{overflow:hidden}.card .modal-meme.sprite{left:auto;right:18px;top:22px;opacity:.58;filter:grayscale(1) contrast(1.2);
+ transform:scale(calc(var(--scale)*1.35));transform-origin:top right;z-index:0}
+.card .bigday,.card .tag,.card h2,.card p,.card .ok,.card .x{position:relative;z-index:2}
+@media(max-width:800px){.door .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.84))}.door:hover:not(:disabled) .sprite,.door.opened .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.9))}}
+@media(max-width:450px){.door .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.68))}.door:hover:not(:disabled) .sprite,.door.opened .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.74))}.card .modal-meme.sprite{right:-6px;top:20px;transform:scale(calc(var(--scale)*1.05))}.card p{font-size:17px}}
