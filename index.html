@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07162a">
+  <meta name="description" content="Advent 2026 — 24 маленьких повода дожить до праздника красиво.">
+  <title>ADVENT 2026</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">ДЕКАБРЬ · 2026</div>
+      <h1>ADVENT<br><em>КАЛЕНДАРЬ</em></h1>
+      <p class="lead">24 окошка. 24 повода не раскисать перед Новым годом.</p>
+      <div class="progress" aria-label="Прогресс календаря">
+        <span id="progressText">До первого окошка ещё есть время</span>
+        <div class="progress-line"><i id="progressBar"></i></div>
+      </div>
+    </header>
+
+    <section class="calendar-wrap" aria-label="Advent-календарь с 1 по 24 декабря">
+      <div id="calendar" class="calendar"></div>
+    </section>
+
+    <footer>
+      <span>Открывай по одному в день</span>
+      <button id="previewToggle" class="preview-toggle" type="button">Режим проверки</button>
+      <span>до 24 декабря</span>
+    </footer>
+  </main>
+
+  <dialog id="wishDialog" class="wish-dialog">
+    <div class="modal-card">
+      <button id="closeDialog" class="close" type="button" aria-label="Закрыть">×</button>
+      <div class="modal-day" id="modalDay">01 / 24</div>
+      <div class="gift-icon" aria-hidden="true">✦</div>
+      <h2 id="modalTitle">Эгегей!</h2>
+      <p id="modalWish"></p>
+      <button id="modalOk" class="modal-ok" type="button">ПРИНЯТО. ЖИВЁМ ДАЛЬШЕ →</button>
+    </div>
+  </dialog>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
