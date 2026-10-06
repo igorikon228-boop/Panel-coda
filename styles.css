@@ -125,3 +125,19 @@ footer{background:#101010}
 .ok{position:relative;overflow:hidden}.ok:after{content:"✦";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:18px}
 @media(max-width:800px){.stage-stamp{right:14px;top:58px;transform:rotate(12deg) scale(.82)}}
 @media(max-width:450px){.kicker{align-items:flex-start}.kicker i{font-size:6px;letter-spacing:.12em}.hero h1:after{right:0}.stage-stamp{display:none}.hero-bottom p:first-child{padding-left:10px}.hero-bottom p:first-child:before{width:3px}.door.opened:after{display:none}}
+
+/* CLEAN HEADER + CALENDAR FINALE v12 */
+.kicker:after{content:none!important}
+.stage-stamp{display:none!important}
+.stage-finale{position:relative;z-index:2;display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:22px;
+ margin-top:14px;padding:20px 4px 2px;border-top:1px solid #3a3a3a;overflow:hidden}
+.finale-index{color:var(--orange);font-size:clamp(66px,9vw,118px);font-weight:1000;line-height:.67;letter-spacing:-.1em}
+.finale-copy{align-self:center;padding-left:18px;border-left:4px solid var(--lime)}
+.finale-copy span{display:block;color:#737373;font-size:8px;letter-spacing:.2em;margin-bottom:6px}
+.finale-copy strong{display:block;color:#eee;font-size:clamp(13px,1.6vw,20px);line-height:.9;letter-spacing:-.035em}
+.finale-mark{display:flex;align-items:center;gap:9px;align-self:center;color:var(--lime)}
+.finale-mark i{display:block;width:34px;height:1px;background:#565656}.finale-mark i:last-child{background:var(--orange)}
+.finale-mark b{font-size:22px;transform:rotate(14deg)}
+.stage-finale:after{content:"01—31";position:absolute;right:5%;bottom:-24px;z-index:-1;color:#ffffff07;font-size:90px;font-weight:1000;letter-spacing:-.08em}
+@media(max-width:800px){.stage-finale{gap:14px}.finale-index{font-size:76px}.finale-copy{padding-left:12px}.finale-mark i{width:20px}}
+@media(max-width:450px){.stage-finale{grid-template-columns:auto 1fr;margin-top:9px;padding:16px 2px 4px}.finale-index{font-size:62px}.finale-copy{border-left-width:3px}.finale-copy strong{font-size:12px}.finale-mark{display:none}.stage-finale:after{font-size:60px;right:-5px;bottom:-12px}}
