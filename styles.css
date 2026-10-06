@@ -100,3 +100,28 @@ footer button{border-color:#555}
 footer{background:#101010}
 @media(max-width:800px){.calendar-stage{padding:12px 10px 18px}.stage-word{font-size:260px}.stage-meta{grid-template-columns:1fr auto}.stage-meta span:last-child{display:none}}
 @media(max-width:450px){.calendar-stage{padding:9px 5px 14px}.calendar-stage:before{background-size:32px 32px}.calendar-stage:after{font-size:84px;bottom:-6px}.stage-meta{padding:2px 2px 9px;font-size:8px}.stage-word{font-size:190px;left:-22px;top:22%}.orbit-a{width:180px;height:70px;right:-70px}.calendar-stage .calendar{margin:0}}
+
+/* ART DIRECTION PASS v11 */
+::selection{background:var(--orange);color:#080808}
+.kicker{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.kicker i{font-style:normal;color:#777;font-size:8px;letter-spacing:.2em;white-space:nowrap}
+.hero h1{position:relative;z-index:2}
+.hero h1:after{content:"✦";position:absolute;right:2%;top:-8%;color:var(--orange);font-size:clamp(18px,3vw,38px);letter-spacing:0;transform:rotate(17deg)}
+.hero-bottom p:first-child{position:relative;padding-left:16px}
+.hero-bottom p:first-child:before{content:"";position:absolute;left:0;top:1px;bottom:1px;width:4px;background:var(--orange)}
+.stage-stamp{position:absolute;right:24px;top:64px;z-index:1;width:66px;height:66px;border:1px solid #ff6b2277;border-radius:50%;
+ display:grid;place-items:center;text-align:center;color:var(--orange);font-size:8px;line-height:1.05;letter-spacing:.12em;transform:rotate(12deg);opacity:.75}
+.door{transition:background .18s,box-shadow .18s,filter .18s}
+.door:after{transition:.18s}
+.door:nth-child(5n+2) .mini{color:var(--orange)}
+.door:nth-child(11n+4) .num{font-style:italic;transform:skew(-7deg)}
+.door:nth-child(10n+3):after{content:"+";position:absolute;right:7px;bottom:29px;z-index:3;color:#777;background:none;width:auto;height:auto;font-size:17px;transform:none}
+.door:hover:not(:disabled){background:#151515;box-shadow:inset 0 -5px var(--orange)}
+.door:hover:not(:disabled) .num{color:var(--lime)}
+.door.opened .sym{color:var(--orange)}
+.door.opened:after{content:"OPEN";position:absolute;right:7px;bottom:29px;z-index:3;color:#777;background:none;width:auto;height:auto;font-size:7px;letter-spacing:.14em;transform:rotate(-90deg);transform-origin:right bottom}
+.card:before{content:"31 / DEC";position:absolute;left:-2px;top:50%;color:#ffffff12;font-size:9px;letter-spacing:.18em;transform:rotate(-90deg) translateY(-50%);transform-origin:left top}
+.card h2{letter-spacing:-.045em}
+.ok{position:relative;overflow:hidden}.ok:after{content:"✦";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:18px}
+@media(max-width:800px){.stage-stamp{right:14px;top:58px;transform:rotate(12deg) scale(.82)}}
+@media(max-width:450px){.kicker{align-items:flex-start}.kicker i{font-size:6px;letter-spacing:.12em}.hero h1:after{right:0}.stage-stamp{display:none}.hero-bottom p:first-child{padding-left:10px}.hero-bottom p:first-child:before{width:3px}.door.opened:after{display:none}}
