@@ -71,3 +71,17 @@ async function init(){
  toggle.classList.toggle("active",preview);build();
 }
 init();
+/* HOBA MODE v13 */
+const hobaButton=document.querySelector("#hobaMode"),snowLayer=document.querySelector("#snowLayer");
+let hobaOn=localStorage.getItem("hobaMode")==="1";
+function makeSnow(){
+ if(!snowLayer)return;snowLayer.innerHTML="";
+ const count=window.matchMedia("(max-width:450px)").matches?28:52;
+ for(let i=0;i<count;i++){const s=document.createElement("span");s.className="snowflake";s.textContent=i%4===0?"✦":"•";
+  s.style.left=(Math.random()*100)+"vw";s.style.fontSize=(5+Math.random()*13)+"px";s.style.opacity=(.28+Math.random()*.58);
+  s.style.setProperty("--drift",(-45+Math.random()*90)+"px");s.style.animationDuration=(7+Math.random()*10)+"s, "+(2+Math.random()*4)+"s";s.style.animationDelay=(-Math.random()*14)+"s";
+  snowLayer.appendChild(s)}
+}
+function setHoba(on){hobaOn=on;localStorage.setItem("hobaMode",on?"1":"0");document.body.classList.toggle("hoba-on",on);snowLayer?.classList.toggle("on",on);
+ if(hobaButton){hobaButton.setAttribute("aria-checked",String(on));hobaButton.querySelector("b").textContent=on?"ON":"OFF";hobaButton.setAttribute("aria-label",(on?"Выключить":"Включить")+" HOBA MODE и снег")}if(on&&snowLayer&&!snowLayer.children.length)makeSnow()}
+hobaButton?.addEventListener("click",()=>setHoba(!hobaOn));setHoba(hobaOn);
