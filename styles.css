@@ -25,3 +25,25 @@ dialog{border:0;background:transparent;padding:0;max-width:none}dialog::backdrop
 .card .bigday,.card .tag,.card h2,.card p,.card .ok,.card .x{position:relative;z-index:2}
 @media(max-width:800px){.door .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.84))}.door:hover:not(:disabled) .sprite,.door.opened .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.9))}}
 @media(max-width:450px){.door .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.68))}.door:hover:not(:disabled) .sprite,.door.opened .sprite{transform:translate(-50%,-50%) scale(calc(var(--scale)*.74))}.card .modal-meme.sprite{right:-6px;top:20px;transform:scale(calc(var(--scale)*1.05))}.card p{font-size:17px}}
+
+/* ORANGE + FRAMED SPRITES v7 */
+:root{--orange:#ff6b22;--orange-soft:#ff8a3d}
+.hero{border-top:5px solid var(--orange)}
+.hero:before{content:"";position:absolute;width:170px;height:170px;left:-70px;bottom:-105px;border:18px solid var(--orange);border-radius:50%;opacity:.88;transform:rotate(18deg)}
+.kicker:after{content:" / ХОБА";color:var(--orange)}
+.manifest strong{text-shadow:3px 3px 0 #40200e}
+.manifest p:after{content:" ✦";color:var(--orange)}
+.door:nth-child(4n+2){border-color:#a64b25}.door:nth-child(4n+2) .sym,.door:nth-child(6n+3) .num{color:var(--orange)}
+.door:nth-child(9n+1):after{content:"";position:absolute;z-index:2;width:34px;height:5px;right:8px;bottom:8px;background:var(--orange);transform:rotate(-9deg)}
+.door.today{outline-color:var(--orange);box-shadow:0 0 32px #ff6b224d}
+footer{border-bottom:5px solid var(--orange)}
+.ok{background:linear-gradient(90deg,var(--lime) 0 72%,var(--orange) 72% 100%)}
+
+/* Hide atlas-cell edges inside deliberate editorial frames */
+.door .sprite{border-radius:48% 48% 18% 18% / 28% 32% 14% 18%;clip-path:inset(3px 3px 4px 3px round 18px);box-shadow:inset 0 0 0 4px #0a0a0a,inset 0 0 28px 10px #000;mix-blend-mode:normal}
+.door .sprite:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 20px 12px #080808;pointer-events:none}
+.card .modal-meme.sprite{right:24px;top:24px;border:2px solid #626262;border-radius:18px;clip-path:inset(5px round 14px);box-shadow:inset 0 0 34px 17px #080808,0 0 0 7px #0a0a0a,7px 7px 0 var(--orange);opacity:.72}
+.card .modal-meme.sprite:after{content:"";position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 28px 16px #080808;pointer-events:none}
+.card .blob{color:var(--orange);text-shadow:2px 3px 0 #773113}
+.card .tag{color:var(--orange)}
+@media(max-width:450px){.hero{border-top-width:4px}.hero:before{width:100px;height:100px;left:-55px;bottom:-55px;border-width:10px}.card .modal-meme.sprite{right:4px;top:24px;box-shadow:inset 0 0 25px 12px #080808,0 0 0 5px #0a0a0a,5px 5px 0 var(--orange)}}
